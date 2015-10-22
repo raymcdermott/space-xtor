@@ -1,1 +1,1 @@
-datomic: ./start-datomic
+datomic: /app/scripts/start-datomic.sh
