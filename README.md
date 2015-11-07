@@ -8,7 +8,7 @@ To use this project you need to create you app in a Heroku Space.
 
 ### Custom buildpack (mandatory)
 
-To enable this buildpack on an existing project:
+You must enable a custom buildpack on your project:
 
 ````heroku buildpacks:set https://github.com/opengrail/heroku-buildpack-datomic -a myapp````
 
