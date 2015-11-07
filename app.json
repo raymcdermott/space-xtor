@@ -10,7 +10,8 @@
   "website": "http://www.datomic.com",
   "repository": "https://github.com/raymcdermott/space-xtor",
   "addons": [
-    "heroku-postgresql:hobby-dev"
+    "heroku-postgresql",
+    "papertrail"
   ],
   "buildpacks": [
     {
