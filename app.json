@@ -1,0 +1,20 @@
+{
+  "name": "Datomic Transactor",
+  "description": "This app starts a Datomic transactor using POSTGRES storage.",
+  "keywords": [
+    "Datomic",
+    "transactor",
+    "Postgres",
+    "storage"
+  ],
+  "website": "http://www.datomic.com",
+  "repository": "https://github.com/raymcdermott/space-xtor",
+  "addons": [
+    "heroku-postgresql:hobby-dev"
+  ],
+  "buildpacks": [
+    {
+      "url": "https://github.com/opengrail/heroku-buildpack-datomic"
+    }
+  ]
+}
