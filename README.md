@@ -60,7 +60,7 @@ If the lead transactor fails, the other worker will takeover.
 
 When clients connect to the storage they will be automatically transitioned to the new lead transactor.
 
-Check the [Datomic documentation](http://docs.datomic.com/deployment.html) for more details on the failover strategy used by Datomic 
+Check the [Datomic documentation](http://docs.datomic.com/ha.html) for more details on the HA strategy used by Datomic 
 
 # And push...
 
