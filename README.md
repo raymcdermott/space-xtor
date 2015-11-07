@@ -1,5 +1,7 @@
 # Start a Datomic Transactor
 
+Clone this app ... do the setup and push the code to the Heroku
+
 ## Heroku Spaces (mandatory)
 
 This technology exploits the features of [Heroku Spaces](https://www.heroku.com/private-spaces) to securely inter-connect dynos. 
