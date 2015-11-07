@@ -1,12 +1,12 @@
 # Start a Datomic Transactor
 
-## Heroku pre-requisites
+## Heroku Spaces (mandatory)
 
 This technology exploits the features of [Heroku Spaces](https://www.heroku.com/private-spaces) to securely inter-connect dynos. 
 
-To use this buildpack you need to have access to Heroku Spaces. Outside of Heroku Spaces, Datomic security is not assured.
+To use this project you need to create you app in a Heroku Space.
 
-### Configuring a custom buildpack
+### Custom buildpack (mandatory)
 
 To enable this buildpack on an existing project:
 
@@ -24,7 +24,7 @@ You can optionally configure the version of Datomic you wish to deploy (default 
 
 ````heroku config:set DATOMIC_VERSION version-number````
 
-#### Datomic Pro configuration
+#### Datomic Pro configuration (recommended)
 
 You can get a free copy of the [Datomic Pro starter edition](http://www.datomic.com/get-datomic.html) or bring your supported license.
 
@@ -38,25 +38,29 @@ You can optionally configure the version of Datomic you wish to deploy (default 
 
 ````heroku config:set DATOMIC_VERSION version-number````
 
-#### Heroku Addons - Pro editions only
+#### Heroku Addons - Pro editions only (recommended)
 
-To run any of the Pro editions, this buildpack needs you to have a Postgres database. 
+To run any of the Pro editions, this project needs a Postgres database. 
 
-The only Postgres database supported is `Heroku Postgres (free or paid)`
+The buildpack used by the project only supports the `Heroku Postgres (free or paid)`
 
-This buildpack will automatically configure Postgres for use with Datomic (if not already done) 
+The buildpack will automatically configure the Postgres instance for use with Datomic (if not already done) 
 
-### Dyno size
+### Dyno size (recommended)
 
 Transactors require dynos with a minimum of 1Gb RAM in all cases. In production, 4Gb or more is preferred.
 
-### Dyno count
+### Dyno count (optional)
 
 To manage failover for the Pro edition (not starter or free), 2 Transactors can be started. 
 
-If the lead transactor fails, the other worker can takeover.
+This can be achieved manually with the [`Heroku toolbelt`](https://devcenter.heroku.com/articles/procfile#scaling-a-process-type)
+
+If the lead transactor fails, the other worker will takeover.
 
 When clients connect to the storage they will be automatically transitioned to the new lead transactor.
+
+Check the [Datomic documentation](http://docs.datomic.com/deployment.html) for more details on the failover strategy used by Datomic 
 
 # And push...
 
